@@ -1,4 +1,4 @@
-ID,Author_ID,Title,Genre,PublCountry,Stock,Price_Amount,Price_Currency,IsHardCover
+ID,Author_ID,Title,Genre,PublCountry_code,Stock,Price_Amount,Price_Currency_code,IsHardCover
 c658259f-88f4-4d94-b475-ad674ad12abe,b2b92296-c38d-4a76-84bf-37ddb146c01c,Book Title 1,1,JPN,17,45.8,USD,False
 31bd86af-8bb2-4756-bcec-c6dbbda978df,77e2b30d-be25-40e9-85a0-0cbfc04c825c,Book Title 2,1,ESP,41,13.6,USD,True
 74f9886b-318a-4439-a55e-7e9d1fec4db1,ffaafef3-f23d-42d8-aa62-904880b8aa1b,Book Title 3,1,ITA,65,97.75,USD,True

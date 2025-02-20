@@ -1,11 +1,11 @@
 namespace com.sap.learning;
-using { cuid, managed } from '@sap/cds/common';
+using { cuid, managed, Country, Currency } from '@sap/cds/common';
 
 entity Books: cuid, managed {
         author      : Association to Authors;
         title       : localized String(255);
         genre       : Genre;
-        publCountry : String(80);
+        publCountry : Country;
         stock       : NoOfBooks;
         price       : Price;
         isHardCover : Boolean;
@@ -22,7 +22,7 @@ entity Authors: cuid, managed {
 
 type Price {
     amount   : Decimal(10, 2);
-    currency : String(3);
+    currency : Currency;
 }
 
 type Genre     : Integer enum {

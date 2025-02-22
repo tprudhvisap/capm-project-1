@@ -15,8 +15,8 @@
   },
   "cds": {
     "requires": {
-      "db":{
-        "[development]":{
+      "db": {
+        "[development]": {
           "kind": "sqlite",
           "credentials": {
             "url": ":memory:"
@@ -27,9 +27,11 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-booksauthors": "cds watch --open booksauthors/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-booksauthors": "cds watch --open booksauthors/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "sapux": [
-    "app/booksauthors"
+    "app/booksauthors",
+    "app/project1"
   ]
 }

@@ -15,3 +15,15 @@ Content-Type: application/json
   "dateOfDeath": "1705-05-09", 
   "epoch": {"ID": 120}
 }
+
+# In the following requests the variable baseUrl is used.
+# Its value is set here.
+@baseUrl = http://localhost:4004
+
+
+
+### ------------------------------------------------------------------------
+# Get all books
+GET {{baseUrl}}/CatalogService/Books
+###
+GET {{baseUrl}}/CatalogService/Books?$filter=stock gt 200

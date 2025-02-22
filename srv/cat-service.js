@@ -20,14 +20,23 @@ class CatalogService extends cds.ApplicationService{
         }
     }
 
-    reduceStock(req){
+    async reduceStock(req){
         const { Books } = this.entities;
         const { book, quantity } = req.data;
         if (quantity < 1) {
-            return req.error('The quantity must be atleast 1');          
+            return req.error('INVALID_QUANTITY');          
         }
-        let stock = 10;
-        return(stock);
+        const b = await SELECT.one.from(Books).where({ID:book}).columns(b=>{ b.stock });
+        if (!b) {
+            return req.error('BOOK_NOT_FOUND',[book]);
+        }
+        let {stock} = b;
+        if (quantity > stock) {
+            return req.error('${quantity} exceeds stock')
+        }
+
+        await update(Books).where({ ID: book }).with({ stock: { '-=':quantity}});
+        return{ stock: stock - quantity};
     }
 }
 module.exports = CatalogService;

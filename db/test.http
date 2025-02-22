@@ -1,0 +1,77 @@
+# In the following requests the variable baseUrl is used.
+# Its value is set here.
+@baseUrl = http://localhost:4004
+
+### ------------------------------------------------------------------------
+# Get Service Document
+GET {{baseUrl}}/admin
+
+### ------------------------------------------------------------------------
+# Get Service Metadata Document
+GET {{baseUrl}}/admin/$metadata
+
+### ------------------------------------------------------------------------
+# Get all books with language en
+# with inlined publication country and currency
+GET {{baseUrl}}/admin/Books?$expand=publCountry,price_currency
+Accept-Language: en
+
+### ------------------------------------------------------------------------
+# Get all books with language de
+# with inlined publication country and currency
+GET {{baseUrl}}/admin/Books?$expand=publCountry,price_currency
+Accept-Language: de
+
+### ------------------------------------------------------------------------
+# Get all authors with language en
+# with inlined epoch
+GET {{baseUrl}}/admin/Authors?$expand=epoch
+Accept-Language: en
+
+
+### ------------------------------------------------------------------------
+# Get all books with inlined author
+GET {{baseUrl}}/admin/Books('d92e60af-01e6-46be-8bb3-a3557eb48271')?$expand=author
+
+### ------------------------------------------------------------------------
+# Get all authors with inlined books
+GET {{baseUrl}}/admin/Authors?$expand=books
+
+### ------------------------------------------------------------------------
+# Get all books of Author Name 1
+# @name getAuthor
+GET {{baseUrl}}/admin/Authors?$filter=name eq 'Author Name 1'
+
+###
+@authorID = {{getAuthor.response.body.$.value[0].ID}}
+
+GET  {{baseUrl}}/admin/Authors({{authorID}})/books
+
+### ------------------------------------------------------------------------
+# Create a new book with empty title, invalid genre and without author
+POST {{baseUrl}}/admin/Books
+Content-Type: application/json
+
+{
+  "title": "",
+  "genre": 3
+}
+
+### ------------------------------------------------------------------------
+# Retrieve the ID of Author Name 1
+# Use this ID to create a new book with stock 10 (default)
+# @name getAuthor
+GET {{baseUrl}}/admin/Authors?$filter=name eq 'Author Name 1'
+
+@authorID = {{getAuthor.response.body.$.value[0].ID}}
+
+###
+
+POST {{baseUrl}}/admin/Books
+Content-Type: application/json
+
+{
+  "title": "Macbeth",
+  "author_ID": "{{authorID}}",
+  "genre": 1
+}

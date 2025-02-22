@@ -1,11 +1,11 @@
-ID,Name,DateOfBirth,DateOfDeath
-04657b87-5b81-4e62-a485-ed0bf1cf3cd8,Author Name 1,1979-07-29,
-90683376-56a9-4a6e-a55f-d58a5c8979e8,Author Name 2,1953-12-19,
-69087efe-74b2-4972-bd9d-e7da1ca4dc39,Author Name 3,1989-10-05,
-77e2b30d-be25-40e9-85a0-0cbfc04c825c,Author Name 4,1993-05-04,
-b2b92296-c38d-4a76-84bf-37ddb146c01c,Author Name 5,1966-01-12,2000-12-29
-d83456f4-5f87-47ba-8fdd-7fce99694da5,Author Name 6,1975-03-19,2006-11-10
-f63894e3-1c29-4f61-ad2b-8cf753518c8b,Author Name 7,1946-06-14,
-b79dd52d-e186-48be-9505-da8311bcbcd8,Author Name 8,1924-09-10,
-7672a490-c6db-4fb5-b95a-2e978ddbec87,Author Name 9,1967-09-27,2021-05-16
-ffaafef3-f23d-42d8-aa62-904880b8aa1b,Author Name 10,1995-12-16,2045-12-14
+ID,Name,DateOfBirth,DateOfDeath,epoch_ID
+04657b87-5b81-4e62-a485-ed0bf1cf3cd8,Author Name 1,1979-07-29, , 100
+90683376-56a9-4a6e-a55f-d58a5c8979e8,Author Name 2,1953-12-19, , 110
+69087efe-74b2-4972-bd9d-e7da1ca4dc39,Author Name 3,1989-10-05, , 120
+77e2b30d-be25-40e9-85a0-0cbfc04c825c,Author Name 4,1993-05-04, , 130
+b2b92296-c38d-4a76-84bf-37ddb146c01c,Author Name 5,1966-01-12,2000-12-29, 110
+d83456f4-5f87-47ba-8fdd-7fce99694da5,Author Name 6,1975-03-19,2006-11-10, 120
+f63894e3-1c29-4f61-ad2b-8cf753518c8b,Author Name 7,1946-06-14, , 110
+b79dd52d-e186-48be-9505-da8311bcbcd8,Author Name 8,1924-09-10, , 110
+7672a490-c6db-4fb5-b95a-2e978ddbec87,Author Name 9,1967-09-27,2021-05-16, 110
+ffaafef3-f23d-42d8-aa62-904880b8aa1b,Author Name 10,1995-12-16,2045-12-14, 120

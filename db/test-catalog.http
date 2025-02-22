@@ -1,0 +1,69 @@
+# In the following requests the variable baseUrl is used.
+# Its value is set here.
+@baseUrl = http://localhost:4004
+
+
+
+### ------------------------------------------------------------------------
+# Get Service Document
+GET {{baseUrl}}/CatalogService
+
+
+### ------------------------------------------------------------------------
+# Get Service Metadata Document
+GET {{baseUrl}}/CatalogService/$metadata
+
+
+### ------------------------------------------------------------------------
+# Get all books with language en
+GET {{baseUrl}}/CatalogService/Books
+Accept-Language: en
+
+
+### ------------------------------------------------------------------------
+# Get all books with language de
+GET {{baseUrl}}/CatalogService/Books
+Accept-Language: de
+
+
+### ------------------------------------------------------------------------
+# Get all authors with language en
+GET {{baseUrl}}/CatalogService/Authors
+Accept-Language: en
+
+
+### ------------------------------------------------------------------------
+# Get all authors with language de
+GET {{baseUrl}}/CatalogService/Authors
+Accept-Language: de
+
+
+### ------------------------------------------------------------------------
+# Create a new author
+POST {{baseUrl}}/CatalogService/Authors
+Content-Type: application/json
+
+{
+  "name": "Friedrich Schiller",
+  "dateOfBirth": "1759-11-10",
+  "dateOfDeath": "1805-05-09",
+  "epoch": {"ID": 120}
+}
+
+### ------------------------------------------------------------------------
+# Create a new book
+POST {{baseUrl}}/CatalogService/Books
+Content-Type: application/json
+
+{
+  "@odata.context": "$metadata#Books/$entity",
+  "ID": "055244a4-68d6-4e55-ba3d-688470a911cb",
+  "title": "Friedrich Schiller Book",
+  "writer": "Friedrich Schiller",
+  "publCountry": "US",
+  "isHardCover": null,
+  "amount": 53,
+  "currency_code": "USD",
+  "stock": 73,
+  "author_ID": "86c157e4-1d05-4522-9576-54d3baf1423c"
+}
